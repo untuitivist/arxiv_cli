@@ -4,5 +4,3 @@
 2. [B_search_and_rank](nodes/B_search_and_rank/node.md)
 3. [C_fetch_by_id_or_query](nodes/C_fetch_by_id_or_query/node.md)
 4. [D_review_local_docs](nodes/D_review_local_docs/node.md)
-
-This mirrors the lightweight workflow-note style used in `wqb_cli`, but focuses on repeatable arXiv retrieval tasks.
