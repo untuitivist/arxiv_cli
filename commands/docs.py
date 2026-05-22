@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 
-from ..core.io import write_json
+from ..core.output import emit_payload
 from ..core.paths import DOCS_ROOT
 
 
@@ -11,10 +11,12 @@ def add_docs_parser(subparsers: argparse._SubParsersAction) -> None:
     docs_sub = docs.add_subparsers(dest="docs_command", required=True)
 
     list_parser = docs_sub.add_parser("list", help="List documented command nodes")
+    list_parser.add_argument("--format", choices=["json", "text"], default="json", help="Render output as json or text")
     list_parser.add_argument("--output", help="Write JSON result to file")
 
     show_parser = docs_sub.add_parser("show", help="Show one documentation file")
     show_parser.add_argument("path", help="Doc path under resources/docs/commands, e.g. search/query")
+    show_parser.add_argument("--format", choices=["json", "text"], default="json", help="Render output as json or text")
     show_parser.add_argument("--output", help="Write JSON result to file")
 
 
@@ -25,21 +27,25 @@ def handle_docs(args: argparse.Namespace) -> int:
             rel = readme.relative_to(DOCS_ROOT).as_posix()
             node = rel.removesuffix("/README.md") if rel != "README.md" else ""
             nodes.append({"node": node, "readme": rel})
-        write_json({"ok": True, "docs_root": str(DOCS_ROOT), "nodes": nodes}, args.output)
+        emit_payload({"ok": True, "docs_root": str(DOCS_ROOT), "nodes": nodes}, output=args.output, fmt=args.format)
         return 0
     if args.docs_command == "show":
         target = (DOCS_ROOT / args.path).resolve()
         root = DOCS_ROOT.resolve()
         if root not in target.parents and target != root:
-            write_json({"ok": False, "reason": "path_outside_docs_root", "path": args.path}, args.output)
+            emit_payload({"ok": False, "reason": "path_outside_docs_root", "path": args.path}, output=args.output, fmt=args.format)
             return 1
         if target.is_dir():
             target = target / "README.md"
         elif target.suffix == "":
             target = target / "README.md"
         if not target.exists() or not target.is_file():
-            write_json({"ok": False, "reason": "doc_not_found", "path": args.path}, args.output)
+            emit_payload({"ok": False, "reason": "doc_not_found", "path": args.path}, output=args.output, fmt=args.format)
             return 1
-        write_json({"ok": True, "path": str(target), "text": target.read_text(encoding="utf-8-sig")}, args.output)
+        emit_payload(
+            {"ok": True, "path": str(target), "text": target.read_text(encoding="utf-8-sig")},
+            output=args.output,
+            fmt=args.format,
+        )
         return 0
     raise AssertionError(args.docs_command)

@@ -1,5 +1,6 @@
 include README.md
 include CHANGELOG.md
+include scripts/*.py
 recursive-include resources/docs *.md *.json
 recursive-include workflow *.md
 recursive-include local *.md

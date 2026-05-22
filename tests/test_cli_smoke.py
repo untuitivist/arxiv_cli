@@ -35,8 +35,11 @@ class CliSmokeTests(unittest.TestCase):
         result = run_arxiv("--help")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("api", result.stdout)
+        self.assertIn("query", result.stdout)
         self.assertIn("search", result.stdout)
         self.assertIn("paper", result.stdout)
+        self.assertIn("find", result.stdout)
+        self.assertIn("workflow", result.stdout)
 
     def test_config_init_get_set_with_temp_config(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -60,6 +63,8 @@ class CliSmokeTests(unittest.TestCase):
         nodes = {item["node"] for item in payload["nodes"]}
         self.assertIn("", nodes)
         self.assertIn("api", nodes)
+        self.assertIn("query/run", nodes)
+        self.assertIn("find/papers", nodes)
         self.assertIn("search/query", nodes)
         self.assertIn("paper/get", nodes)
 
@@ -84,12 +89,32 @@ class CliSmokeTests(unittest.TestCase):
         self.assertEqual(payload["endpoint_count"], 1)
         self.assertIn("GET", payload["method_counts"])
 
+    def test_api_stats_text_smoke(self) -> None:
+        result = run_arxiv("api", "stats", "--format", "text")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("endpoint_count: 1", result.stdout)
+
     def test_api_show_smoke(self) -> None:
         result = run_arxiv("api", "show", "/api/query")
         self.assertEqual(result.returncode, 0, result.stderr)
         payload = json.loads(result.stdout)
         self.assertEqual(payload["path"], "/api/query")
         self.assertIn("POST", payload["methods"])
+
+    def test_query_run_dry_run_smoke(self) -> None:
+        result = run_arxiv("query", "run", "--search-query", "all:test", "--dry-run")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertIs(payload["dry_run"], True)
+        self.assertEqual(payload["request"]["params"]["search_query"], "all:test")
+
+    def test_workflow_list_smoke(self) -> None:
+        result = run_arxiv("workflow", "list")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        payload = json.loads(result.stdout)
+        nodes = {item["node"] for item in payload["nodes"]}
+        self.assertIn("A_config_and_rate_limit", nodes)
+        self.assertIn("B_search_and_rank", nodes)
 
     def test_paper_help_smoke(self) -> None:
         result = run_arxiv("paper", "get", "--help")

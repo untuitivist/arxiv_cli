@@ -7,6 +7,9 @@ Current command nodes:
 - `api`
 - `config`
 - `docs`
+- `find/papers`
 - `paper/get`
+- `query/run`
 - `search/query`
 - `search/raw`
+- `workflow`

@@ -24,6 +24,10 @@ def parse_key_values(items: list[str] | None) -> dict[str, str]:
 
 def write_json(payload: Any, output: str | None = None) -> None:
     text = json.dumps(payload, ensure_ascii=False, indent=2)
+    write_text(text, output)
+
+
+def write_text(text: str, output: str | None = None) -> None:
     if output:
         path = Path(output)
         path.parent.mkdir(parents=True, exist_ok=True)

@@ -1,9 +1,0 @@
-﻿{
-  "params": {
-    "search_query": "all:\"alpha factors\" AND all:\"deep learning\" AND all:investment",
-    "start": 0,
-    "max_results": 8,
-    "sortBy": "relevance",
-    "sortOrder": "descending"
-  }
-}

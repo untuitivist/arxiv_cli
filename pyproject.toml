@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "arxiv-cli"
-version = "0.1.0"
-description = "Agent-first arXiv API CLI with bundled command documentation and workflow notes."
+version = "0.2.0"
+description = "Layered agent-first arXiv API CLI with inventory, raw endpoint inspection, workflow notes, and shortcut search commands."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [

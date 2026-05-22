@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 
 from ..core.client import ArxivClient
-from ..core.io import write_json
+from ..core.output import emit_payload
 
 
 def add_paper_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -15,13 +15,15 @@ def add_paper_parser(subparsers: argparse._SubParsersAction) -> None:
     get_parser.add_argument("--base-url", help="Override API endpoint")
     get_parser.add_argument("--delay-seconds", type=float, help="Minimum spacing between requests")
     get_parser.add_argument("--timeout-seconds", type=float, help="HTTP timeout")
+    get_parser.add_argument("--dry-run", action="store_true", help="Show the prepared request without executing it")
+    get_parser.add_argument("--format", choices=["json", "text"], default="json", help="Render output as json or text")
     get_parser.add_argument("--output", help="Write JSON result to file")
 
 
 def handle_paper(args: argparse.Namespace) -> int:
     if args.paper_command == "get":
         client = ArxivClient.from_args(args)
-        result = client.fetch_by_ids(args.ids)
-        write_json(result, args.output)
+        result = client.fetch_by_ids(args.ids, dry_run=args.dry_run)
+        emit_payload(result, output=args.output, fmt=args.format)
         return 0
     raise AssertionError(args.paper_command)

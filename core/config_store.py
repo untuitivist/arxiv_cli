@@ -15,6 +15,14 @@ DEFAULT_CONFIG: dict[str, Any] = {
     "timeout_seconds": 30.0,
 }
 
+ENV_TO_KEY = {
+    "ARXIV_CLI_BASE_URL": "base_url",
+    "ARXIV_CLI_TOOL": "tool",
+    "ARXIV_CLI_CONTACT": "contact",
+    "ARXIV_CLI_DELAY_SECONDS": "delay_seconds",
+    "ARXIV_CLI_TIMEOUT_SECONDS": "timeout_seconds",
+}
+
 
 class ConfigStore:
     def __init__(self, path: str | None = None) -> None:
@@ -29,10 +37,12 @@ class ConfigStore:
 
     def load(self) -> dict[str, Any]:
         if not self.path.exists():
-            return dict(DEFAULT_CONFIG)
-        data = json.loads(self.path.read_text(encoding="utf-8-sig"))
+            data = {}
+        else:
+            data = json.loads(self.path.read_text(encoding="utf-8-sig"))
         merged = dict(DEFAULT_CONFIG)
         merged.update(data)
+        self._apply_env_overrides(merged)
         return merged
 
     def save(self, config: dict[str, Any]) -> None:
@@ -44,18 +54,28 @@ class ConfigStore:
 
     def set(self, key: str, raw_value: str) -> Any:
         config = self.load()
-        value: Any = raw_value
-        lower = raw_value.lower()
-        if lower in {"true", "false"}:
-            value = lower == "true"
-        else:
-            try:
-                value = int(raw_value)
-            except ValueError:
-                try:
-                    value = float(raw_value)
-                except ValueError:
-                    value = raw_value
+        value = self._coerce_value(raw_value)
         config[key] = value
         self.save(config)
         return value
+
+    def _apply_env_overrides(self, config: dict[str, Any]) -> None:
+        import os
+
+        for env_name, key in ENV_TO_KEY.items():
+            raw_value = os.environ.get(env_name)
+            if raw_value in {None, ""}:
+                continue
+            config[key] = self._coerce_value(raw_value)
+
+    def _coerce_value(self, raw_value: str) -> Any:
+        lower = raw_value.lower()
+        if lower in {"true", "false"}:
+            return lower == "true"
+        try:
+            return int(raw_value)
+        except ValueError:
+            try:
+                return float(raw_value)
+            except ValueError:
+                return raw_value

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -53,32 +54,51 @@ ATOM_SAMPLE = """<?xml version="1.0" encoding="utf-8"?>
 
 class ClientTests(unittest.TestCase):
     def test_search_raw_returns_parsed_feed(self) -> None:
-        client = ArxivClient(
-            ClientSettings(
-                base_url="https://export.arxiv.org/api/query",
-                tool="arxiv-cli",
-                contact="you@example.com",
-                delay_seconds=0.0,
-                timeout_seconds=5.0,
-            ),
-            state_path=REPO_ROOT / "local" / "state" / "test_last_request_at.txt",
-        )
-        with patch("arxiv_cli.core.client.requests.request") as mock_request:
-            mock_request.return_value = _FakeResponse(
-                "https://export.arxiv.org/api/query?search_query=all%3Atest&start=0&max_results=1",
-                ATOM_SAMPLE,
+        with tempfile.TemporaryDirectory() as tmp:
+            client = ArxivClient(
+                ClientSettings(
+                    base_url="https://export.arxiv.org/api/query",
+                    tool="arxiv-cli",
+                    contact="you@example.com",
+                    delay_seconds=0.0,
+                    timeout_seconds=5.0,
+                ),
+                state_path=Path(tmp) / "state" / "test_last_request_at.txt",
             )
-            payload = client.search_raw(
-                "all:test",
-                start=0,
-                max_results=1,
-                sort_by="relevance",
-                sort_order="descending",
-            )
+            with patch("arxiv_cli.core.client.requests.request") as mock_request:
+                mock_request.return_value = _FakeResponse(
+                    "https://export.arxiv.org/api/query?search_query=all%3Atest&start=0&max_results=1",
+                    ATOM_SAMPLE,
+                )
+                payload = client.search_raw(
+                    "all:test",
+                    start=0,
+                    max_results=1,
+                    sort_by="relevance",
+                    sort_order="descending",
+                )
         self.assertIs(payload["ok"], True)
         self.assertEqual(payload["total_results"], 1)
         self.assertEqual(payload["entries"][0]["title"], "Test Title")
         self.assertIn("User-Agent", payload["request"]["headers"])
+
+    def test_fetch_by_ids_dry_run_skips_network(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            client = ArxivClient(
+                ClientSettings(
+                    base_url="https://export.arxiv.org/api/query",
+                    tool="arxiv-cli",
+                    contact="you@example.com",
+                    delay_seconds=0.0,
+                    timeout_seconds=5.0,
+                ),
+                state_path=Path(tmp) / "state" / "test_last_request_at.txt",
+            )
+            with patch("arxiv_cli.core.client.requests.request") as mock_request:
+                payload = client.fetch_by_ids(["1706.03762"], dry_run=True)
+        self.assertIs(payload["dry_run"], True)
+        self.assertEqual(payload["request"]["params"]["id_list"], "1706.03762")
+        mock_request.assert_not_called()
 
 
 if __name__ == "__main__":

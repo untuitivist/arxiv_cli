@@ -6,6 +6,7 @@ from typing import Any
 
 import requests
 
+from .. import __version__
 from .config_store import ConfigStore
 from .feed import parse_feed
 from .paths import DEFAULT_STATE_PATH
@@ -70,6 +71,48 @@ class ArxivClient:
             headers={"User-Agent": self._build_user_agent()},
         )
 
+    def prepare_query_request(
+        self,
+        *,
+        method: str = "GET",
+        search_query: str | None = None,
+        id_list: list[str] | None = None,
+        start: int = 0,
+        max_results: int = 10,
+        sort_by: str | None = None,
+        sort_order: str | None = None,
+    ) -> PreparedRequest:
+        payload = self._build_query_payload(
+            search_query=search_query,
+            id_list=id_list,
+            start=start,
+            max_results=max_results,
+            sort_by=sort_by,
+            sort_order=sort_order,
+        )
+        return PreparedRequest(
+            endpoint="/api/query",
+            method=method.upper(),
+            url=self.settings.base_url,
+            params=payload if method.upper() == "GET" else {},
+            data=payload if method.upper() == "POST" else None,
+            headers={"User-Agent": self._build_user_agent()},
+        )
+
+    def describe_prepared(self, prepared: PreparedRequest) -> dict[str, Any]:
+        return {
+            "ok": True,
+            "dry_run": True,
+            "endpoint": prepared.endpoint,
+            "request": {
+                "method": prepared.method,
+                "url": prepared.url,
+                "params": prepared.params,
+                "data": prepared.data,
+                "headers": prepared.headers,
+            },
+        }
+
     def call(self, prepared: PreparedRequest, *, parse_atom: bool = True) -> dict[str, Any]:
         self._respect_rate_limit()
         started = time.time()
@@ -122,21 +165,16 @@ class ArxivClient:
         max_results: int,
         sort_by: str,
         sort_order: str,
+        dry_run: bool = False,
     ) -> dict[str, Any]:
-        clauses: list[str] = []
-        for field, values in terms.items():
-            for value in values or []:
-                cleaned = " ".join(value.strip().split())
-                if cleaned:
-                    clauses.append(f'{field}:"{cleaned}"')
-        if not clauses:
-            raise ValueError("At least one search term is required.")
+        search_query = self.build_search_query(terms)
         return self.search_raw(
-            " AND ".join(clauses),
+            search_query,
             start=start,
             max_results=max_results,
             sort_by=sort_by,
             sort_order=sort_order,
+            dry_run=dry_run,
         )
 
     def search_raw(
@@ -147,29 +185,45 @@ class ArxivClient:
         max_results: int,
         sort_by: str,
         sort_order: str,
+        dry_run: bool = False,
+        method: str = "GET",
     ) -> dict[str, Any]:
-        params = {
-            "search_query": search_query,
-            "start": start,
-            "max_results": max_results,
-            "sortBy": sort_by,
-            "sortOrder": sort_order,
-        }
-        return self._query(params)
-
-    def fetch_by_ids(self, ids: list[str]) -> dict[str, Any]:
-        params = {"id_list": ",".join(ids), "start": 0, "max_results": len(ids)}
-        return self._query(params)
-
-    def _query(self, params: dict[str, Any]) -> dict[str, Any]:
-        prepared = PreparedRequest(
-            endpoint="/api/query",
-            method="GET",
-            url=self.settings.base_url,
-            params=params,
-            data=None,
-            headers={"User-Agent": self._build_user_agent()},
+        return self.run_query(
+            search_query=search_query,
+            start=start,
+            max_results=max_results,
+            sort_by=sort_by,
+            sort_order=sort_order,
+            dry_run=dry_run,
+            method=method,
         )
+
+    def fetch_by_ids(self, ids: list[str], *, dry_run: bool = False, method: str = "GET") -> dict[str, Any]:
+        return self.run_query(id_list=ids, start=0, max_results=len(ids), dry_run=dry_run, method=method)
+
+    def run_query(
+        self,
+        *,
+        search_query: str | None = None,
+        id_list: list[str] | None = None,
+        start: int = 0,
+        max_results: int = 10,
+        sort_by: str | None = None,
+        sort_order: str | None = None,
+        dry_run: bool = False,
+        method: str = "GET",
+    ) -> dict[str, Any]:
+        prepared = self.prepare_query_request(
+            method=method,
+            search_query=search_query,
+            id_list=id_list,
+            start=start,
+            max_results=max_results,
+            sort_by=sort_by,
+            sort_order=sort_order,
+        )
+        if dry_run:
+            return self.describe_prepared(prepared)
         result = self.call(prepared, parse_atom=True)
         if not result["ok"]:
             response = result["response"]
@@ -185,11 +239,44 @@ class ArxivClient:
         }
         return payload
 
+    def build_search_query(self, terms: dict[str, list[str] | None]) -> str:
+        clauses: list[str] = []
+        for field, values in terms.items():
+            for value in values or []:
+                cleaned = " ".join(value.strip().split())
+                if cleaned:
+                    clauses.append(f'{field}:"{cleaned}"')
+        if not clauses:
+            raise ValueError("At least one search term is required.")
+        return " AND ".join(clauses)
+
     def _build_user_agent(self) -> str:
         contact = self.settings.contact.strip()
         if contact:
-            return f"{self.settings.tool}/0.1.0 ({contact})"
-        return f"{self.settings.tool}/0.1.0 (contact-not-set)"
+            return f"{self.settings.tool}/{__version__} ({contact})"
+        return f"{self.settings.tool}/{__version__} (contact-not-set)"
+
+    def _build_query_payload(
+        self,
+        *,
+        search_query: str | None = None,
+        id_list: list[str] | None = None,
+        start: int = 0,
+        max_results: int = 10,
+        sort_by: str | None = None,
+        sort_order: str | None = None,
+    ) -> dict[str, Any]:
+        payload: dict[str, Any] = {"start": start, "max_results": max_results}
+        if search_query:
+            payload["search_query"] = search_query
+        if id_list:
+            payload["id_list"] = ",".join(id_list)
+            payload["max_results"] = max_results or len(id_list)
+        if sort_by:
+            payload["sortBy"] = sort_by
+        if sort_order:
+            payload["sortOrder"] = sort_order
+        return payload
 
     def _respect_rate_limit(self) -> None:
         last_request_at = self._load_last_request_at()

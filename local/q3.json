@@ -1,9 +1,0 @@
-﻿{
-  "params": {
-    "search_query": "all:\"learning to rank\" AND all:stocks",
-    "start": 0,
-    "max_results": 8,
-    "sortBy": "relevance",
-    "sortOrder": "descending"
-  }
-}

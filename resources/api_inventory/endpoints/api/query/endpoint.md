@@ -21,9 +21,3 @@ sortBy can be relevance, lastUpdatedDate, or submittedDate. sortOrder can be asc
 ## Rate Limits
 
 When using the legacy APIs (including OAI-PMH, RSS, and the arXiv API), make no more than one request every three seconds, and limit requests to a single connection at a time.
-
-## Live Probe Notes
-
-- `GET` with URL query parameters succeeded with HTTP `200`.
-- `POST` with form-encoded body succeeded with HTTP `200`.
-- `POST` with only URL query parameters returned HTTP `400`.

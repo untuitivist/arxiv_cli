@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 
 from ..core.client import ArxivClient
-from ..core.io import write_json
+from ..core.output import emit_payload
 
 
 def add_search_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -44,6 +44,8 @@ def _add_common_search_options(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--base-url", help="Override API endpoint")
     parser.add_argument("--delay-seconds", type=float, help="Minimum spacing between requests")
     parser.add_argument("--timeout-seconds", type=float, help="HTTP timeout")
+    parser.add_argument("--dry-run", action="store_true", help="Show the prepared request without executing it")
+    parser.add_argument("--format", choices=["json", "text"], default="json", help="Render output as json or text")
     parser.add_argument("--output", help="Write JSON result to file")
 
 
@@ -65,8 +67,9 @@ def handle_search(args: argparse.Namespace) -> int:
             max_results=args.max_results,
             sort_by=args.sort_by,
             sort_order=args.sort_order,
+            dry_run=args.dry_run,
         )
-        write_json(result, args.output)
+        emit_payload(result, output=args.output, fmt=args.format)
         return 0
     if args.search_command == "raw":
         result = client.search_raw(
@@ -75,7 +78,8 @@ def handle_search(args: argparse.Namespace) -> int:
             max_results=args.max_results,
             sort_by=args.sort_by,
             sort_order=args.sort_order,
+            dry_run=args.dry_run,
         )
-        write_json(result, args.output)
+        emit_payload(result, output=args.output, fmt=args.format)
         return 0
     raise AssertionError(args.search_command)

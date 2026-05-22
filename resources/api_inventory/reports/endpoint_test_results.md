@@ -1,6 +1,6 @@
 # Endpoint Test Results
 
-- Generated at: `2026-05-22T18:06:23.903005+00:00`
+- Generated at: `2026-05-22T22:52:40.824247+00:00`
 - Tested endpoint method cases: `3`
 
 | Method | Path | Transport | Status | Note |
