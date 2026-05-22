@@ -2,8 +2,12 @@
 
 `arxiv-cli` is an agent-first command line toolkit for querying the public arXiv metadata API.
 
+[![CI](https://github.com/untuitivist/arxiv_cli/actions/workflows/ci.yml/badge.svg)](https://github.com/untuitivist/arxiv_cli/actions/workflows/ci.yml)
+[![Release](https://github.com/untuitivist/arxiv_cli/actions/workflows/release.yml/badge.svg)](https://github.com/untuitivist/arxiv_cli/actions/workflows/release.yml)
+
 It is structured as a standalone sibling project to `wqb_cli`, while keeping a similar package layout: command groups under `commands/`, core HTTP and parsing helpers under `core/`, bundled docs under `resources/docs/`, workflow notes under `workflow/`, and subprocess smoke tests under `tests/`.
 
+- Repository: [untuitivist/arxiv_cli](https://github.com/untuitivist/arxiv_cli)
 - API reference: [arXiv API Access](https://info.arxiv.org/help/api/index.html)
 - Basics: [arXiv API Basics](https://info.arxiv.org/help/api/basics.html)
 - Manual: [arXiv API User's Manual](https://info.arxiv.org/help/api/user-manual.html)
@@ -39,6 +43,14 @@ arxiv_cli/
 
 - Python 3.11 or newer
 - Network access to `https://export.arxiv.org/api/query`
+
+## GitHub Release
+
+Tag a version like `v0.1.0` to trigger the GitHub release workflow. It will:
+
+- run package builds
+- attach `dist/*` artifacts to the GitHub release
+- generate release notes automatically
 
 ## Installation
 
@@ -100,3 +112,4 @@ arxiv paper get 1706.03762 2401.10401
 - This project is independent and not affiliated with arXiv.
 - Commands call the live public API. There is no fake or dry-run mode.
 - arXiv returns Atom XML; `arxiv-cli` normalizes the feed into JSON for downstream use.
+- Machine-local query outputs under `local/` are ignored by Git and should stay uncommitted.
