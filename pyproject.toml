@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arxiv-cli"
+version = "0.1.0"
+description = "Agent-first arXiv API CLI with bundled command documentation and workflow notes."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    { name = "wiz" },
+]
+dependencies = [
+    "requests>=2.31",
+]
+
+[project.scripts]
+arxiv = "arxiv_cli.cli:main"
+
+[project.urls]
+Repository = "https://info.arxiv.org/help/api/index.html"
+Author = "https://github.com/untuitivist"
+
+[tool.setuptools]
+packages = ["arxiv_cli", "arxiv_cli.commands", "arxiv_cli.core"]
+
+[tool.setuptools.package-dir]
+arxiv_cli = "."
+
+[tool.setuptools.package-data]
+arxiv_cli = [
+    "resources/api_inventory/**/*.md",
+    "resources/api_inventory/**/*.json",
+    "resources/api_inventory/**/*.txt",
+    "resources/api_inventory/**/*.html",
+    "resources/api_inventory/**/*.xml",
+    "resources/docs/**/*.md",
+    "resources/docs/**/*.json",
+    "workflow/**/*.md",
+    "local/**/*.md",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

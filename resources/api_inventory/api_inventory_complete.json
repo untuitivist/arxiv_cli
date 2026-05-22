@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-05-22T18:06:23.903005+00:00",
+  "endpoints": [
+    {
+      "path": "/api/query",
+      "url_template": "https://export.arxiv.org/api/query",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": [
+        "arxiv_api_access",
+        "arxiv_api_basics",
+        "arxiv_api_user_manual",
+        "arxiv_api_terms_of_use",
+        "live_probe"
+      ],
+      "description": "Public arXiv metadata query endpoint returning Atom 1.0 feeds.",
+      "safe_probe": true,
+      "params": {
+        "search_query": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "string",
+          "required": false,
+          "description": "Fielded search expression."
+        },
+        "id_list": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "string",
+          "required": false,
+          "description": "Comma-delimited arXiv ids."
+        },
+        "start": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "integer",
+          "required": false,
+          "default": 0,
+          "description": "0-based result offset."
+        },
+        "max_results": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "integer",
+          "required": false,
+          "default": 10,
+          "recommended_max": 2000,
+          "absolute_max": 30000,
+          "description": "Number of results to return."
+        },
+        "sortBy": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "string",
+          "required": false,
+          "choices": [
+            "relevance",
+            "lastUpdatedDate",
+            "submittedDate"
+          ],
+          "description": "Sort field."
+        },
+        "sortOrder": {
+          "location": [
+            "query",
+            "form"
+          ],
+          "type": "string",
+          "required": false,
+          "choices": [
+            "ascending",
+            "descending"
+          ],
+          "description": "Sort direction."
+        }
+      },
+      "request_body": {
+        "POST": {
+          "content_type": "application/x-www-form-urlencoded",
+          "fields": [
+            "search_query",
+            "id_list",
+            "start",
+            "max_results",
+            "sortBy",
+            "sortOrder"
+          ],
+          "notes": [
+            "POST with form-encoded body fields succeeded during live probing.",
+            "POST with only query-string params returned HTTP 400 during live probing."
+          ]
+        }
+      },
+      "notes": [
+        "Response bodies, including error payloads, are Atom 1.0 XML.",
+        "Rate limit guidance requires one request every three seconds and one connection at a time."
+      ],
+      "docs_refs": [
+        {
+          "title": "API Access",
+          "url": "https://info.arxiv.org/help/api/index.html"
+        },
+        {
+          "title": "API Basics",
+          "url": "https://info.arxiv.org/help/api/basics.html"
+        },
+        {
+          "title": "API User Manual",
+          "url": "https://info.arxiv.org/help/api/user-manual.html"
+        },
+        {
+          "title": "API Terms of Use",
+          "url": "https://info.arxiv.org/help/api/tou.html"
+        }
+      ],
+      "manual_sections": {
+        "search_query_and_id_list_logic": "The search_query parameter accepts a search expression used to find articles, while id_list accepts a comma-delimited list of arXiv ids. If only search_query is present, the API returns matching articles. If only id_list is present, the API returns the listed articles. If both are present, the API returns only the listed articles that also match search_query.",
+        "start_and_max_results_paging": "start is a 0-based offset of the first returned result. max_results controls how many results are returned. The manual recommends a 3 second delay between repeated calls, limits max_results to 30000 overall, and advises retrieving slices of at most 2000 at a time.",
+        "sort_order": "sortBy can be relevance, lastUpdatedDate, or submittedDate. sortOrder can be ascending or descending.",
+        "response_format": "Everything returned by the API in HTTP response bodies, including errors, is Atom 1.0 XML."
+      },
+      "response_format": {
+        "content_type": "application/atom+xml",
+        "body_format": "Atom 1.0 XML",
+        "feed_fields": [
+          "id",
+          "title",
+          "updated",
+          "opensearch:totalResults",
+          "opensearch:startIndex",
+          "opensearch:itemsPerPage",
+          "entry[]"
+        ],
+        "entry_fields": [
+          "id",
+          "title",
+          "summary",
+          "published",
+          "updated",
+          "author[]",
+          "link[]",
+          "category[]",
+          "arxiv:primary_category"
+        ]
+      },
+      "probe": {
+        "get_with_query_params": {
+          "status_code": 200,
+          "content_type": "application/atom+xml; charset=utf-8",
+          "url": "https://export.arxiv.org/api/query?search_query=all%3Aelectron&start=0&max_results=1",
+          "ok": true
+        },
+        "post_with_form_body": {
+          "status_code": 200,
+          "content_type": "application/atom+xml; charset=utf-8",
+          "url": "https://export.arxiv.org/api/query",
+          "ok": true
+        },
+        "post_with_query_params_only": {
+          "status_code": 400,
+          "content_type": "application/atom+xml; charset=utf-8",
+          "url": "https://export.arxiv.org/api/query?search_query=all%3Aelectron&start=0&max_results=1",
+          "ok": false,
+          "note": "Observed HTTP 400; use form-encoded body fields instead."
+        }
+      }
+    }
+  ]
+}

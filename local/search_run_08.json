@@ -1,0 +1,139 @@
+{
+  "feed_title": "arXiv Query: search_query=all:finance AND all:lagged AND all:signal AND all:\"deep learning\"&id_list=&start=0&max_results=8",
+  "feed_id": "https://arxiv.org/api/9yq+WHTY5CX4D+nKbfhaVxeDE28",
+  "updated": "2026-05-22T18:26:16Z",
+  "total_results": 4,
+  "start_index": 0,
+  "items_per_page": 8,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/2511.00390v1",
+      "title": "DeltaLag: Learning Dynamic Lead-Lag Patterns in Financial Markets",
+      "summary": "The lead-lag effect, where the price movement of one asset systematically precedes that of another, has been widely observed in financial markets and conveys valuable predictive signals for trading. However, traditional lead-lag detection methods are limited by their reliance on statistical analysis methods and by the assumption of persistent lead-lag patterns, which are often invalid in dynamic market conditions. In this paper, we propose \\textbf{DeltaLag}, the first end-to-end deep learning method that discovers and exploits dynamic lead-lag structures with pair-specific lag values in financial markets for portfolio construction. Specifically, DeltaLag employs a sparsified cross-attention mechanism to identify relevant lead-lag pairs. These lead-lag signals are then leveraged to extract lag-aligned raw features from the leading stocks for predicting the lagger stock's future return. Empirical evaluations show that DeltaLag substantially outperforms both fixed-lag and self-lead-lag baselines. In addition, its adaptive mechanism for identifying lead-lag relationships consistently surpasses precomputed lead-lag graphs based on statistical methods. Furthermore, DeltaLag outperforms a wide range of temporal and spatio-temporal deep learning models designed for stock prediction or time series forecasting, offering both better trading performance and enhanced interpretability.",
+      "published": "2025-11-01T04:00:09Z",
+      "updated": "2025-11-01T04:00:09Z",
+      "authors": [
+        "Wanyun Zhou",
+        "Saizhuo Wang",
+        "Mihai Cucuringu",
+        "Zihao Zhang",
+        "Xiang Li",
+        "Jian Guo",
+        "Chao Zhang",
+        "Xiaowen Chu"
+      ],
+      "categories": [
+        "cs.CE"
+      ],
+      "primary_category": "cs.CE",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2511.00390v1",
+        "pdf": "https://arxiv.org/pdf/2511.00390v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2601.05975v1",
+      "title": "DeePM: Regime-Robust Deep Learning for Systematic Macro Portfolio Management",
+      "summary": "We propose DeePM (Deep Portfolio Manager), a structured deep-learning macro portfolio manager trained end-to-end to maximize a robust, risk-adjusted utility. DeePM addresses three fundamental challenges in financial learning: (1) it resolves the asynchronous \"ragged filtration\" problem via a Directed Delay (Causal Sieve) mechanism that prioritizes causal impulse-response learning over information freshness; (2) it combats low signal-to-noise ratios via a Macroeconomic Graph Prior, regularizing cross-asset dependence according to economic first principles; and (3) it optimizes a distributionally robust objective where a smooth worst-window penalty serves as a differentiable proxy for Entropic Value-at-Risk (EVaR) - a window-robust utility encouraging strong performance in the most adverse historical subperiods. In large-scale backtests from 2010-2025 on 50 diversified futures with highly realistic transaction costs, DeePM attains net risk-adjusted returns that are roughly twice those of classical trend-following strategies and passive benchmarks, solely using daily closing prices. Furthermore, DeePM improves upon the state-of-the-art Momentum Transformer architecture by roughly fifty percent. The model demonstrates structural resilience across the 2010s \"CTA (Commodity Trading Advisor) Winter\" and the post-2020 volatility regime shift, maintaining consistent performance through the pandemic, inflation shocks, and the subsequent higher-for-longer environment. Ablation studies confirm that strictly lagged cross-sectional attention, graph prior, principled treatment of transaction costs, and robust minimax optimization are the primary drivers of this generalization capability.",
+      "published": "2026-01-09T17:47:32Z",
+      "updated": "2026-01-09T17:47:32Z",
+      "authors": [
+        "Kieran Wood",
+        "Stephen J. Roberts",
+        "Stefan Zohren"
+      ],
+      "categories": [
+        "q-fin.TR",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "q-fin.TR",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2601.05975v1",
+        "pdf": "https://arxiv.org/pdf/2601.05975v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2208.03703v2",
+      "title": "Granger Causality using Neural Networks",
+      "summary": "Dependence between nodes in a network is an important concept that pervades many areas including finance, politics, sociology, genomics and the brain sciences. One way to characterize dependence between components of a multivariate time series data is via Granger Causality (GC). Standard traditional approaches to GC estimation / inference commonly assume linear dynamics, however such simplification does not hold in many real-world applications where signals are inherently non-linear. In such cases, imposing linear models such as vector autoregressive (VAR) models can lead to mis-characterization of true Granger Causal interactions. To overcome this limitation, Tank et al (IEEE Transactions on Pattern Analysis and Machine Learning, 2022) proposed a solution that uses neural networks with sparse regularization penalties. The regularization encourages learnable weights to be sparse, which enables inference on GC. This paper overcomes the limitations of current methods by leveraging advances in machine learning and deep learning which have been demonstrated to learn hidden patterns in the data. We propose novel classes of models that can handle underlying non-linearity in a computationally efficient manner, simultaneously providing GC and lag order selection. Firstly, we present the Learned Kernel VAR (LeKVAR) model that learns kernel parameterized by a shared neural net followed by penalization on learnable weights to discover GC structure. Secondly, we show one can directly decouple lags and individual time series importance via decoupled penalties. This is important as we want to select the lag order during the process of GC estimation. This decoupling acts as a filtering and can be extended to any DL model including Multi-Layer Perceptrons (MLP), Recurrent Neural Networks (RNN), Long Short Term Memory Networks (LSTM), Transformers etc, for simultaneous GC estimation and lag selection.",
+      "published": "2022-08-07T12:02:48Z",
+      "updated": "2024-08-07T09:18:40Z",
+      "authors": [
+        "Malik Shahid Sultan",
+        "Samuel Horvath",
+        "Hernando Ombao"
+      ],
+      "categories": [
+        "stat.ML",
+        "cs.LG"
+      ],
+      "primary_category": "stat.ML",
+      "comment": "To be Submitted to a Journal work Presented at JSM. arXiv admin note: text overlap with arXiv:1802.05842 by other authors",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2208.03703v2",
+        "pdf": "https://arxiv.org/pdf/2208.03703v2"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.09061v1",
+      "title": "A Market-Rule-Informed Neural Network for Efficient Imbalance Electricity Price Forecasting",
+      "summary": "Accurate and efficient imbalance electricity price forecasting is critical for industrial energy trading systems, especially as battery assets and automated bidding pipelines increasingly participate in balancing markets. However, real-time forecasting is complicated by nonlinear market-rule-based price formation, heterogeneous input signals, and incomplete data availability caused by communication delays, publication lags, and measurement outages. This paper proposes a market-rule-informed neural forecasting framework that embeds imbalance price formation rules into the latent space of an expressive neural network. The proposed framework preserves raw signal information while exploiting transparent market-rule priors. We further analyze operational robustness by removing price-component information and characterize how forecasting performance scales with input length and forecasting horizon. Experimental results show that the proposed model achieves competitive forecasting performance with substantially fewer trainable parameters and shorter training time than generic deep learning baselines. Experimental results show that the proposed model achieves competitive forecasting performance with substantially fewer trainable parameters and shorter training time than generic deep learning baselines, demonstrating that market-rule priors and expressive neural networks should be jointly used for accurate and computationally sustainable forecasting in industrial energy trading applications. The implementation is publicly available at https://runyao-yu.github.io/MRINN/.",
+      "published": "2026-05-09T17:07:53Z",
+      "updated": "2026-05-09T17:07:53Z",
+      "authors": [
+        "Runyao Yu",
+        "Julia Lin",
+        "Derek W. Bunn",
+        "Jochen Stiasny",
+        "Wentao Wang",
+        "Yujie Chen",
+        "Tara Esterl",
+        "Peter Palensky",
+        "Jochen L. Cremer"
+      ],
+      "categories": [
+        "q-fin.CP",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.CP",
+      "comment": "10 pages, 3 figures, 3 tables",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2605.09061v1",
+        "pdf": "https://arxiv.org/pdf/2605.09061v1"
+      }
+    }
+  ],
+  "ok": true,
+  "request": {
+    "method": "GET",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Afinance+AND+all%3Alagged+AND+all%3Asignal+AND+all%3A%22deep+learning%22&start=0&max_results=8&sortBy=relevance&sortOrder=descending",
+    "params": {
+      "search_query": "all:finance AND all:lagged AND all:signal AND all:\"deep learning\"",
+      "start": 0,
+      "max_results": 8,
+      "sortBy": "relevance",
+      "sortOrder": "descending"
+    },
+    "data": null,
+    "headers": {
+      "User-Agent": "arxiv-cli/0.1.0 (contact-not-set)"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "reason": "OK",
+    "elapsed_ms": 1403,
+    "content_type": "application/atom+xml; charset=utf-8"
+  }
+}

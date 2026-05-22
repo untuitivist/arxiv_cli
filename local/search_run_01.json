@@ -1,0 +1,57 @@
+{
+  "feed_title": "arXiv Query: search_query=all:\"quantitative trading\" AND all:\"deep learning\" AND all:embedding&id_list=&start=0&max_results=8",
+  "feed_id": "https://arxiv.org/api/vSTs2W5wVRLZz07E9B6ZDdPi68I",
+  "updated": "2026-05-22T18:20:37Z",
+  "total_results": 1,
+  "start_index": 0,
+  "items_per_page": 8,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/2312.15730v1",
+      "title": "Deep Reinforcement Learning for Quantitative Trading",
+      "summary": "Artificial Intelligence (AI) and Machine Learning (ML) are transforming the domain of Quantitative Trading (QT) through the deployment of advanced algorithms capable of sifting through extensive financial datasets to pinpoint lucrative investment openings. AI-driven models, particularly those employing ML techniques such as deep learning and reinforcement learning, have shown great prowess in predicting market trends and executing trades at a speed and accuracy that far surpass human capabilities. Its capacity to automate critical tasks, such as discerning market conditions and executing trading strategies, has been pivotal. However, persistent challenges exist in current QT methods, especially in effectively handling noisy and high-frequency financial data. Striking a balance between exploration and exploitation poses another challenge for AI-driven trading agents. To surmount these hurdles, our proposed solution, QTNet, introduces an adaptive trading model that autonomously formulates QT strategies through an intelligent trading agent. Incorporating deep reinforcement learning (DRL) with imitative learning methodologies, we bolster the proficiency of our model. To tackle the challenges posed by volatile financial datasets, we conceptualize the QT mechanism within the framework of a Partially Observable Markov Decision Process (POMDP). Moreover, by embedding imitative learning, the model can capitalize on traditional trading tactics, nurturing a balanced synergy between discovery and utilization. For a more realistic simulation, our trading agent undergoes training using minute-frequency data sourced from the live financial market. Experimental findings underscore the model's proficiency in extracting robust market features and its adaptability to diverse market conditions.",
+      "published": "2023-12-25T13:58:53Z",
+      "updated": "2023-12-25T13:58:53Z",
+      "authors": [
+        "Maochun Xu",
+        "Zixun Lan",
+        "Zheng Tao",
+        "Jiawei Du",
+        "Zongao Ye"
+      ],
+      "categories": [
+        "q-fin.TR"
+      ],
+      "primary_category": "q-fin.TR",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2312.15730v1",
+        "pdf": "https://arxiv.org/pdf/2312.15730v1"
+      }
+    }
+  ],
+  "ok": true,
+  "request": {
+    "method": "GET",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3A%22quantitative+trading%22+AND+all%3A%22deep+learning%22+AND+all%3Aembedding&start=0&max_results=8&sortBy=relevance&sortOrder=descending",
+    "params": {
+      "search_query": "all:\"quantitative trading\" AND all:\"deep learning\" AND all:embedding",
+      "start": 0,
+      "max_results": 8,
+      "sortBy": "relevance",
+      "sortOrder": "descending"
+    },
+    "data": null,
+    "headers": {
+      "User-Agent": "arxiv-cli/0.1.0 (contact-not-set)"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "reason": "OK",
+    "elapsed_ms": 559,
+    "content_type": "application/atom+xml; charset=utf-8"
+  }
+}

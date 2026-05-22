@@ -1,0 +1,9 @@
+﻿{
+  "params": {
+    "search_query": "all:stock AND all:embedding AND all:return",
+    "start": 0,
+    "max_results": 8,
+    "sortBy": "relevance",
+    "sortOrder": "descending"
+  }
+}

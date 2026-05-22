@@ -1,0 +1,237 @@
+{
+  "feed_title": "arXiv Query: search_query=all:embedding AND all:stock AND all:prediction AND all:\"portfolio\"&id_list=&start=0&max_results=8",
+  "feed_id": "https://arxiv.org/api/SbOWxI1nASPH838cx7sUpGBCc1E",
+  "updated": "2026-05-22T18:26:11Z",
+  "total_results": 11,
+  "start_index": 0,
+  "items_per_page": 8,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/2501.17992v1",
+      "title": "Reinforcement-Learning Portfolio Allocation with Dynamic Embedding of Market Information",
+      "summary": "We develop a portfolio allocation framework that leverages deep learning techniques to address challenges arising from high-dimensional, non-stationary, and low-signal-to-noise market information. Our approach includes a dynamic embedding method that reduces the non-stationary, high-dimensional state space into a lower-dimensional representation. We design a reinforcement learning (RL) framework that integrates generative autoencoders and online meta-learning to dynamically embed market information, enabling the RL agent to focus on the most impactful parts of the state space for portfolio allocation decisions. Empirical analysis based on the top 500 U.S. stocks demonstrates that our framework outperforms common portfolio benchmarks and the predict-then-optimize (PTO) approach using machine learning, particularly during periods of market stress. Traditional factor models do not fully explain this superior performance. The framework's ability to time volatility reduces its market exposure during turbulent times. Ablation studies confirm the robustness of this performance across various reinforcement learning algorithms. Additionally, the embedding and meta-learning techniques effectively manage the complexities of high-dimensional, noisy, and non-stationary financial data, enhancing both portfolio performance and risk management.",
+      "published": "2025-01-29T20:56:59Z",
+      "updated": "2025-01-29T20:56:59Z",
+      "authors": [
+        "Jinghai He",
+        "Cheng Hua",
+        "Chunyang Zhou",
+        "Zeyu Zheng"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2501.17992v1",
+        "pdf": "https://arxiv.org/pdf/2501.17992v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2408.02899v1",
+      "title": "SETN: Stock Embedding Enhanced with Textual and Network Information",
+      "summary": "Stock embedding is a method for vector representation of stocks. There is a growing demand for vector representations of stock, i.e., stock embedding, in wealth management sectors, and the method has been applied to various tasks such as stock price prediction, portfolio optimization, and similar fund identifications. Stock embeddings have the advantage of enabling the quantification of relative relationships between stocks, and they can extract useful information from unstructured data such as text and network data. In this study, we propose stock embedding enhanced with textual and network information (SETN) using a domain-adaptive pre-trained transformer-based model to embed textual information and a graph neural network model to grasp network information. We evaluate the performance of our proposed model on related company information extraction tasks. We also demonstrate that stock embeddings obtained from the proposed model perform better in creating thematic funds than those obtained from baseline methods, providing a promising pathway for various applications in the wealth management industry.",
+      "published": "2024-08-06T02:07:37Z",
+      "updated": "2024-08-06T02:07:37Z",
+      "authors": [
+        "Takehiro Takayanagi",
+        "Hiroki Sakaji",
+        "Kiyoshi Izumi"
+      ],
+      "categories": [
+        "cs.CL",
+        "cs.CE"
+      ],
+      "primary_category": "cs.CL",
+      "comment": null,
+      "journal_ref": null,
+      "doi": "10.1109/BigData55660.2022.10020220",
+      "links": {
+        "alternate": "https://arxiv.org/abs/2408.02899v1",
+        "pdf": "https://arxiv.org/pdf/2408.02899v1",
+        "doi": "https://doi.org/10.1109/BigData55660.2022.10020220"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2107.08721v1",
+      "title": "Stock Movement Prediction with Financial News using Contextualized Embedding from BERT",
+      "summary": "News events can greatly influence equity markets. In this paper, we are interested in predicting the short-term movement of stock prices after financial news events using only the headlines of the news. To achieve this goal, we introduce a new text mining method called Fine-Tuned Contextualized-Embedding Recurrent Neural Network (FT-CE-RNN). Compared with previous approaches which use static vector representations of the news (static embedding), our model uses contextualized vector representations of the headlines (contextualized embeddings) generated from Bidirectional Encoder Representations from Transformers (BERT). Our model obtains the state-of-the-art result on this stock movement prediction task. It shows significant improvement compared with other baseline models, in both accuracy and trading simulations. Through various trading simulations based on millions of headlines from Bloomberg News, we demonstrate the ability of this model in real scenarios.",
+      "published": "2021-07-19T09:47:28Z",
+      "updated": "2021-07-19T09:47:28Z",
+      "authors": [
+        "Qinkai Chen"
+      ],
+      "categories": [
+        "q-fin.ST",
+        "cs.CL",
+        "cs.LG",
+        "q-fin.PM"
+      ],
+      "primary_category": "q-fin.ST",
+      "comment": "22 pages, 6 figures, 7 tables",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2107.08721v1",
+        "pdf": "https://arxiv.org/pdf/2107.08721v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2407.18103v2",
+      "title": "Fine-Tuning Large Language Models for Stock Return Prediction Using Newsflow",
+      "summary": "Large language models (LLMs) and their fine-tuning techniques have demonstrated superior performance in various language understanding and generation tasks. This paper explores fine-tuning LLMs for stock return forecasting with financial newsflow. In quantitative investing, return forecasting is fundamental for subsequent tasks like stock picking, portfolio optimization, etc. We formulate the model to include text representation and forecasting modules. We propose to compare the encoder-only and decoder-only LLMs, considering they generate text representations in distinct ways. The impact of these different representations on forecasting performance remains an open question. Meanwhile, we compare two simple methods of integrating LLMs' token-level representations into the forecasting module. The experiments on real news and investment universes reveal that: (1) aggregated representations from LLMs' token-level embeddings generally produce return predictions that enhance the performance of long-only and long-short portfolios; (2) in the relatively large investment universe, the decoder LLMs-based prediction model leads to stronger portfolios, whereas in the small universes, there are no consistent winners. Among the three LLMs studied (DeBERTa, Mistral, Llama), Mistral performs more robustly across different universes; (3) return predictions derived from LLMs' text representations are a strong signal for portfolio construction, outperforming conventional sentiment scores.",
+      "published": "2024-07-25T15:07:35Z",
+      "updated": "2024-08-05T11:13:57Z",
+      "authors": [
+        "Tian Guo",
+        "Emmanuel Hauptmann"
+      ],
+      "categories": [
+        "q-fin.CP",
+        "cs.LG",
+        "q-fin.PM"
+      ],
+      "primary_category": "q-fin.CP",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2407.18103v2",
+        "pdf": "https://arxiv.org/pdf/2407.18103v2"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2502.10776v1",
+      "title": "A Distillation-based Future-aware Graph Neural Network for Stock Trend Prediction",
+      "summary": "Stock trend prediction involves forecasting the future price movements by analyzing historical data and various market indicators. With the advancement of machine learning, graph neural networks (GNNs) have been extensively employed in stock prediction due to their powerful capability to capture spatiotemporal dependencies of stocks. However, despite the efforts of various GNN stock predictors to enhance predictive performance, the improvements remain limited, as they focus solely on analyzing historical spatiotemporal dependencies, overlooking the correlation between historical and future patterns. In this study, we propose a novel distillation-based future-aware GNN framework (DishFT-GNN) for stock trend prediction. Specifically, DishFT-GNN trains a teacher model and a student model, iteratively. The teacher model learns to capture the correlation between distribution shifts of historical and future data, which is then utilized as intermediate supervision to guide the student model to learn future-aware spatiotemporal embeddings for accurate prediction. Through extensive experiments on two real-world datasets, we verify the state-of-the-art performance of DishFT-GNN.",
+      "published": "2025-02-15T11:44:15Z",
+      "updated": "2025-02-15T11:44:15Z",
+      "authors": [
+        "Zhipeng Liu",
+        "Peibo Duan",
+        "Mingyang Geng",
+        "Bin Zhang"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "q-fin.PM"
+      ],
+      "primary_category": "cs.LG",
+      "comment": null,
+      "journal_ref": null,
+      "doi": "10.1109/ICASSP49660.2025.10889901",
+      "links": {
+        "alternate": "https://arxiv.org/abs/2502.10776v1",
+        "pdf": "https://arxiv.org/pdf/2502.10776v1",
+        "doi": "https://doi.org/10.1109/ICASSP49660.2025.10889901"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2306.15526v1",
+      "title": "Higher-order Graph Attention Network for Stock Selection with Joint Analysis",
+      "summary": "Stock selection is important for investors to construct profitable portfolios. Graph neural networks (GNNs) are increasingly attracting researchers for stock prediction due to their strong ability of relation modelling and generalisation. However, the existing GNN methods only focus on simple pairwise stock relation and do not capture complex higher-order structures modelling relations more than two nodes. In addition, they only consider factors of technical analysis and overlook factors of fundamental analysis that can affect the stock trend significantly. Motivated by them, we propose higher-order graph attention network with joint analysis (H-GAT). H-GAT is able to capture higher-order structures and jointly incorporate factors of fundamental analysis with factors of technical analysis. Specifically, the sequential layer of H-GAT take both types of factors as the input of a long-short term memory model. The relation embedding layer of H-GAT constructs a higher-order graph and learn node embedding with GAT. We then predict the ranks of stock return. Extensive experiments demonstrate the superiority of our H-GAT method on the profitability test and Sharp ratio over both NSDAQ and NYSE datasets",
+      "published": "2023-06-27T14:54:39Z",
+      "updated": "2023-06-27T14:54:39Z",
+      "authors": [
+        "Yang Qiao",
+        "Yiping Xia",
+        "Xiang Li",
+        "Zheng Li",
+        "Yan Ge"
+      ],
+      "categories": [
+        "q-fin.ST",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.ST",
+      "comment": "12 pages, 6 figures,",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2306.15526v1",
+        "pdf": "https://arxiv.org/pdf/2306.15526v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2404.07223v3",
+      "title": "Stock Recommendations for Individual Investors: A Temporal Graph Network Approach with Mean-Variance Efficient Sampling",
+      "summary": "Recommender systems can be helpful for individuals to make well-informed decisions in complex financial markets. While many studies have focused on predicting stock prices, even advanced models fall short of accurately forecasting them. Additionally, previous studies indicate that individual investors often disregard established investment theories, favoring their personal preferences instead. This presents a challenge for stock recommendation systems, which must not only provide strong investment performance but also respect these individual preferences. To create effective stock recommender systems, three critical elements must be incorporated: 1) individual preferences, 2) portfolio diversification, and 3) the temporal dynamics of the first two. In response, we propose a new model, Portfolio Temporal Graph Network Recommender PfoTGNRec, which can handle time-varying collaborative signals and incorporates diversification-enhancing sampling. On real-world individual trading data, our approach demonstrates superior performance compared to state-of-the-art baselines, including cutting-edge dynamic embedding models and existing stock recommendation models. Indeed, we show that PfoTGNRec is an effective solution that can balance customer preferences with the need to suggest portfolios with high Return-on-Investment. The source code and data are available at https://github.com/youngandbin/PfoTGNRec.",
+      "published": "2024-03-27T07:17:55Z",
+      "updated": "2024-11-30T05:54:34Z",
+      "authors": [
+        "Youngbin Lee",
+        "Yejin Kim",
+        "Javier Sanz-Cruzado",
+        "Richard McCreadie",
+        "Yongjae Lee"
+      ],
+      "categories": [
+        "q-fin.ST",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.ST",
+      "comment": "ICAIF 2024 (https://dl.acm.org/doi/10.1145/3677052.3698662)",
+      "journal_ref": null,
+      "doi": "10.1145/3677052.3698662",
+      "links": {
+        "alternate": "https://arxiv.org/abs/2404.07223v3",
+        "pdf": "https://arxiv.org/pdf/2404.07223v3",
+        "doi": "https://doi.org/10.1145/3677052.3698662"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2503.06929v1",
+      "title": "Assessing Uncertainty in Stock Returns: A Gaussian Mixture Distribution-Based Method",
+      "summary": "This study seeks to advance the understanding and prediction of stock market return uncertainty through the application of advanced deep learning techniques. We introduce a novel deep learning model that utilizes a Gaussian mixture distribution to capture the complex, time-varying nature of asset return distributions in the Chinese stock market. By incorporating the Gaussian mixture distribution, our approach effectively characterizes short-term fluctuations and non-traditional features of stock returns, such as skewness and heavy tails, that are often overlooked by traditional models. Compared to GARCH models and their variants, our method demonstrates superior performance in volatility estimation, particularly during periods of heightened market volatility. It provides more accurate volatility forecasts and offers unique risk insights for different assets, thereby deepening the understanding of return uncertainty. Additionally, we propose a novel use of Code embedding which utilizes a bag-of-words approach to train hidden representations of stock codes and transforms the uncertainty attributes of stocks into high-dimensional vectors. These vectors are subsequently reduced to two dimensions, allowing the observation of similarity among different stocks. This visualization facilitates the identification of asset clusters with similar risk profiles, offering valuable insights for portfolio management and risk mitigation. Since we predict the uncertainty of returns by estimating their latent distribution, it is challenging to evaluate the return distribution when the true distribution is unobservable. However, we can measure it through the CRPS to assess how well the predicted distribution matches the true returns, and through MSE and QLIKE metrics to evaluate the error between the volatility level of the predicted distribution and proxy measures of true volatility.",
+      "published": "2025-03-10T05:20:56Z",
+      "updated": "2025-03-10T05:20:56Z",
+      "authors": [
+        "Yanlong Wang",
+        "Jian Xu",
+        "Shao-Lun Huang",
+        "Danny Dongning Sun",
+        "Xiao-Ping Zhang"
+      ],
+      "categories": [
+        "q-fin.RM",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.RM",
+      "comment": "23 pages",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2503.06929v1",
+        "pdf": "https://arxiv.org/pdf/2503.06929v1"
+      }
+    }
+  ],
+  "ok": true,
+  "request": {
+    "method": "GET",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Aembedding+AND+all%3Astock+AND+all%3Aprediction+AND+all%3A%22portfolio%22&start=0&max_results=8&sortBy=relevance&sortOrder=descending",
+    "params": {
+      "search_query": "all:embedding AND all:stock AND all:prediction AND all:\"portfolio\"",
+      "start": 0,
+      "max_results": 8,
+      "sortBy": "relevance",
+      "sortOrder": "descending"
+    },
+    "data": null,
+    "headers": {
+      "User-Agent": "arxiv-cli/0.1.0 (contact-not-set)"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "reason": "OK",
+    "elapsed_ms": 1080,
+    "content_type": "application/atom+xml; charset=utf-8"
+  }
+}

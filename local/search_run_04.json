@@ -1,0 +1,239 @@
+{
+  "feed_title": "arXiv Query: search_query=all:finance AND all:regime AND all:\"deep learning\" AND all:signal&id_list=&start=0&max_results=8",
+  "feed_id": "https://arxiv.org/api/oEuSC1nnp/zgbh/DJywert2XUvk",
+  "updated": "2026-05-22T18:25:30Z",
+  "total_results": 10,
+  "start_index": 0,
+  "items_per_page": 8,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/2601.05975v1",
+      "title": "DeePM: Regime-Robust Deep Learning for Systematic Macro Portfolio Management",
+      "summary": "We propose DeePM (Deep Portfolio Manager), a structured deep-learning macro portfolio manager trained end-to-end to maximize a robust, risk-adjusted utility. DeePM addresses three fundamental challenges in financial learning: (1) it resolves the asynchronous \"ragged filtration\" problem via a Directed Delay (Causal Sieve) mechanism that prioritizes causal impulse-response learning over information freshness; (2) it combats low signal-to-noise ratios via a Macroeconomic Graph Prior, regularizing cross-asset dependence according to economic first principles; and (3) it optimizes a distributionally robust objective where a smooth worst-window penalty serves as a differentiable proxy for Entropic Value-at-Risk (EVaR) - a window-robust utility encouraging strong performance in the most adverse historical subperiods. In large-scale backtests from 2010-2025 on 50 diversified futures with highly realistic transaction costs, DeePM attains net risk-adjusted returns that are roughly twice those of classical trend-following strategies and passive benchmarks, solely using daily closing prices. Furthermore, DeePM improves upon the state-of-the-art Momentum Transformer architecture by roughly fifty percent. The model demonstrates structural resilience across the 2010s \"CTA (Commodity Trading Advisor) Winter\" and the post-2020 volatility regime shift, maintaining consistent performance through the pandemic, inflation shocks, and the subsequent higher-for-longer environment. Ablation studies confirm that strictly lagged cross-sectional attention, graph prior, principled treatment of transaction costs, and robust minimax optimization are the primary drivers of this generalization capability.",
+      "published": "2026-01-09T17:47:32Z",
+      "updated": "2026-01-09T17:47:32Z",
+      "authors": [
+        "Kieran Wood",
+        "Stephen J. Roberts",
+        "Stefan Zohren"
+      ],
+      "categories": [
+        "q-fin.TR",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "q-fin.TR",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2601.05975v1",
+        "pdf": "https://arxiv.org/pdf/2601.05975v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/1708.04682v1",
+      "title": "Deep Learning for Passive Synthetic Aperture Radar",
+      "summary": "We introduce a deep learning (DL) framework for inverse problems in imaging, and demonstrate the advantages and applicability of this approach in passive synthetic aperture radar (SAR) image reconstruction. We interpret image recon- struction as a machine learning task and utilize deep networks as forward and inverse solvers for imaging. Specifically, we design a recurrent neural network (RNN) architecture as an inverse solver based on the iterations of proximal gradient descent optimization methods. We further adapt the RNN architecture to image reconstruction problems by transforming the network into a recurrent auto-encoder, thereby allowing for unsupervised training. Our DL based inverse solver is particularly suitable for a class of image formation problems in which the forward model is only partially known. The ability to learn forward models and hyper parameters combined with unsupervised training approach establish our recurrent auto-encoder suitable for real world applications. We demonstrate the performance of our method in passive SAR image reconstruction. In this regime a source of opportunity, with unknown location and transmitted waveform, is used to illuminate a scene of interest. We investigate recurrent auto- encoder architecture based on the 1 and 0 constrained least- squares problem. We present a projected stochastic gradient descent based training scheme which incorporates constraints of the unknown model parameters. We demonstrate through extensive numerical simulations that our DL based approach out performs conventional sparse coding methods in terms of computation and reconstructed image quality, specifically, when no information about the transmitter is available.",
+      "published": "2017-08-12T00:25:10Z",
+      "updated": "2017-08-12T00:25:10Z",
+      "authors": [
+        "Bariscan Yonel",
+        "Eric Mason",
+        "Birsen Yazıcı"
+      ],
+      "categories": [
+        "cs.CV",
+        "cs.CE"
+      ],
+      "primary_category": "cs.CV",
+      "comment": "Submitted to IEEE Journal of Selected Topics in Signal Processing",
+      "journal_ref": null,
+      "doi": "10.1109/JSTSP.2017.2784181",
+      "links": {
+        "alternate": "https://arxiv.org/abs/1708.04682v1",
+        "pdf": "https://arxiv.org/pdf/1708.04682v1",
+        "doi": "https://doi.org/10.1109/JSTSP.2017.2784181"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2506.06356v1",
+      "title": "Deep Learning Enhanced Multi-Day Turnover Quantitative Trading Algorithm for Chinese A-Share Market",
+      "summary": "This paper presents a sophisticated multi-day turnover quantitative trading algorithm that integrates advanced deep learning techniques with comprehensive cross-sectional stock prediction for the Chinese A-share market. Our framework combines five interconnected modules: initial stock selection through deep cross-sectional prediction networks, opening signal distribution analysis using mixture models for arbitrage identification, market capitalization and liquidity-based dynamic position sizing, grid-search optimized profit-taking and stop-loss mechanisms, and multi-granularity volatility-based market timing models. The algorithm employs a novel approach to balance capital efficiency with risk management through adaptive holding periods and sophisticated entry/exit timing. Trained on comprehensive A-share data from 2010-2020 and rigorously backtested on 2021-2024 data, our method achieves remarkable performance with 15.2\\% annualized returns, maximum drawdown constrained below 5\\%, and a Sharpe ratio of 1.87. The strategy demonstrates exceptional scalability by maintaining 50-100 daily positions with a 9-day maximum holding period, incorporating dynamic profit-taking and stop-loss mechanisms that enhance capital turnover efficiency while preserving risk-adjusted returns. Our approach exhibits robust performance across various market regimes while maintaining high capital capacity suitable for institutional deployment.",
+      "published": "2025-06-03T01:59:55Z",
+      "updated": "2025-06-03T01:59:55Z",
+      "authors": [
+        "Yimin Du"
+      ],
+      "categories": [
+        "cs.CE",
+        "cs.LG"
+      ],
+      "primary_category": "cs.CE",
+      "comment": "10 pages",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2506.06356v1",
+        "pdf": "https://arxiv.org/pdf/2506.06356v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2409.06289v4",
+      "title": "Automate Strategy Finding with LLM in Quant Investment",
+      "summary": "We present a novel three-stage framework leveraging Large Language Models (LLMs) within a risk-aware multi-agent system for automate strategy finding in quantitative finance. Our approach addresses the brittleness of traditional deep learning models in financial applications by: employing prompt-engineered LLMs to generate executable alpha factor candidates across diverse financial data, implementing multimodal agent-based evaluation that filters factors based on market status, predictive quality while maintaining category balance, and deploying dynamic weight optimization that adapts to market conditions. Experimental results demonstrate the robust performance of the strategy in Chinese & US market regimes compared to established benchmarks. Our work extends LLMs capabilities to quantitative trading, providing a scalable architecture for financial signal extraction and portfolio construction. The overall framework significantly outperforms all benchmarks with 53.17% cumulative return on SSE50 (Jan 2023 to Jan 2024), demonstrating superior risk-adjusted performance and downside protection on the market.",
+      "published": "2024-09-10T07:42:28Z",
+      "updated": "2025-11-03T15:46:20Z",
+      "authors": [
+        "Zhizhuo Kou",
+        "Holam Yu",
+        "Junyu Luo",
+        "Jingshu Peng",
+        "Xujia Li",
+        "Chengzhong Liu",
+        "Juntao Dai",
+        "Lei Chen",
+        "Sirui Han",
+        "Yike Guo"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG",
+        "q-fin.PR"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2409.06289v4",
+        "pdf": "https://arxiv.org/pdf/2409.06289v4"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/1909.10801v1",
+      "title": "WATTNet: Learning to Trade FX via Hierarchical Spatio-Temporal Representation of Highly Multivariate Time Series",
+      "summary": "Finance is a particularly challenging application area for deep learning models due to low noise-to-signal ratio, non-stationarity, and partial observability. Non-deliverable-forwards (NDF), a derivatives contract used in foreign exchange (FX) trading, presents additional difficulty in the form of long-term planning required for an effective selection of start and end date of the contract. In this work, we focus on tackling the problem of NDF tenor selection by leveraging high-dimensional sequential data consisting of spot rates, technical indicators and expert tenor patterns. To this end, we construct a dataset from the Depository Trust & Clearing Corporation (DTCC) NDF data that includes a comprehensive list of NDF volumes and daily spot rates for 64 FX pairs. We introduce WaveATTentionNet (WATTNet), a novel temporal convolution (TCN) model for spatio-temporal modeling of highly multivariate time series, and validate it across NDF markets with varying degrees of dissimilarity between the training and test periods in terms of volatility and general market regimes. The proposed method achieves a significant positive return on investment (ROI) in all NDF markets under analysis, outperforming recurrent and classical baselines by a wide margin. Finally, we propose two orthogonal interpretability approaches to verify noise stability and detect the driving factors of the learned tenor selection strategy.",
+      "published": "2019-09-24T10:42:23Z",
+      "updated": "2019-09-24T10:42:23Z",
+      "authors": [
+        "Michael Poli",
+        "Jinkyoo Park",
+        "Ilija Ilievski"
+      ],
+      "categories": [
+        "cs.LG",
+        "q-fin.ST",
+        "stat.ML"
+      ],
+      "primary_category": "cs.LG",
+      "comment": "Submitted to the Thirty-Fourth AAAI Conference on Artificial Intelligence (AAAI 20)",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/1909.10801v1",
+        "pdf": "https://arxiv.org/pdf/1909.10801v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/1806.06975v1",
+      "title": "Towards Gene Expression Convolutions using Gene Interaction Graphs",
+      "summary": "We study the challenges of applying deep learning to gene expression data. We find experimentally that there exists non-linear signal in the data, however is it not discovered automatically given the noise and low numbers of samples used in most research. We discuss how gene interaction graphs (same pathway, protein-protein, co-expression, or research paper text association) can be used to impose a bias on a deep model similar to the spatial bias imposed by convolutions on an image. We explore the usage of Graph Convolutional Neural Networks coupled with dropout and gene embeddings to utilize the graph information. We find this approach provides an advantage for particular tasks in a low data regime but is very dependent on the quality of the graph used. We conclude that more work should be done in this direction. We design experiments that show why existing methods fail to capture signal that is present in the data when features are added which clearly isolates the problem that needs to be addressed.",
+      "published": "2018-06-18T22:40:37Z",
+      "updated": "2018-06-18T22:40:37Z",
+      "authors": [
+        "Francis Dutil",
+        "Joseph Paul Cohen",
+        "Martin Weiss",
+        "Georgy Derevyanko",
+        "Yoshua Bengio"
+      ],
+      "categories": [
+        "q-bio.GN",
+        "cs.CE",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "q-bio.GN",
+      "comment": "4 pages +1 page references, To appear in the International Conference on Machine Learning Workshop on Computational Biology, 2018",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/1806.06975v1",
+        "pdf": "https://arxiv.org/pdf/1806.06975v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2304.03877v1",
+      "title": "OFTER: An Online Pipeline for Time Series Forecasting",
+      "summary": "We introduce OFTER, a time series forecasting pipeline tailored for mid-sized multivariate time series. OFTER utilizes the non-parametric models of k-nearest neighbors and Generalized Regression Neural Networks, integrated with a dimensionality reduction component. To circumvent the curse of dimensionality, we employ a weighted norm based on a modified version of the maximal correlation coefficient. The pipeline we introduce is specifically designed for online tasks, has an interpretable output, and is able to outperform several state-of-the art baselines. The computational efficacy of the algorithm, its online nature, and its ability to operate in low signal-to-noise regimes, render OFTER an ideal approach for financial multivariate time series problems, such as daily equity forecasting. Our work demonstrates that while deep learning models hold significant promise for time series forecasting, traditional methods carefully integrating mainstream tools remain very competitive alternatives with the added benefits of scalability and interpretability.",
+      "published": "2023-04-08T00:18:03Z",
+      "updated": "2023-04-08T00:18:03Z",
+      "authors": [
+        "Nikolas Michael",
+        "Mihai Cucuringu",
+        "Sam Howison"
+      ],
+      "categories": [
+        "stat.ML",
+        "cs.LG",
+        "q-fin.ST",
+        "stat.ME"
+      ],
+      "primary_category": "stat.ML",
+      "comment": "26 pages, 12 figures",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2304.03877v1",
+        "pdf": "https://arxiv.org/pdf/2304.03877v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2605.13407v1",
+      "title": "Vector-Quantized Discrete Latent Factors Meet Financial Priors: Dynamic Cross-Sectional Stock Ranking Prediction for Portfolio Construction",
+      "summary": "Predicting cross-sectional stock returns is challenging due to low signal-to-noise ratios and evolving market regimes. Classical factor models offer interpretability but limited flexibility, while deep learning models achieve strong performance yet often underutilize financial priors. We address this gap with PRISM-VQ (PRior-Informed Stock Model with Vector Quantization), a dynamic factor framework that integrates expert prior factors, vector-quantized discrete latent factors learned from cross-sectional structure, and a structure-conditioned Mixture-of-Experts to generate time-varying factor loadings. Vector quantization acts as an information bottleneck that suppresses noise while capturing robust market structure, with discrete codes serving both as latent factors and as routing signals for temporal expert specialization. Experiments on CSI 300 and S&P 500 show consistent improvements in cross-sectional return prediction and portfolio performance over strong baselines while preserving interpretability. Our code is available at https://github.com/finxlab/PRISM-VQ.",
+      "published": "2026-05-13T12:02:53Z",
+      "updated": "2026-05-13T12:02:53Z",
+      "authors": [
+        "Namhyoung Kim",
+        "Jae Wook Song"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.CE",
+        "q-fin.ST"
+      ],
+      "primary_category": "cs.LG",
+      "comment": "IJCAI 2026 Accepted Paper including Technical Appendix",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2605.13407v1",
+        "pdf": "https://arxiv.org/pdf/2605.13407v1"
+      }
+    }
+  ],
+  "ok": true,
+  "request": {
+    "method": "GET",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3Afinance+AND+all%3Aregime+AND+all%3A%22deep+learning%22+AND+all%3Asignal&start=0&max_results=8&sortBy=relevance&sortOrder=descending",
+    "params": {
+      "search_query": "all:finance AND all:regime AND all:\"deep learning\" AND all:signal",
+      "start": 0,
+      "max_results": 8,
+      "sortBy": "relevance",
+      "sortOrder": "descending"
+    },
+    "data": null,
+    "headers": {
+      "User-Agent": "arxiv-cli/0.1.0 (contact-not-set)"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "reason": "OK",
+    "elapsed_ms": 1080,
+    "content_type": "application/atom+xml; charset=utf-8"
+  }
+}

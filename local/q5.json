@@ -1,0 +1,9 @@
+﻿{
+  "params": {
+    "search_query": "all:\"representation learning\" AND all:stocks AND all:trading",
+    "start": 0,
+    "max_results": 8,
+    "sortBy": "relevance",
+    "sortOrder": "descending"
+  }
+}

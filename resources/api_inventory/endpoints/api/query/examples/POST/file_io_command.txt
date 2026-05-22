@@ -1,0 +1,1 @@
+Invoke-WebRequest -Method Post -Uri "https://export.arxiv.org/api/query" -Body @{search_query="all:electron"; start="0"; max_results="1"} -OutFile "arxiv_cli/resources/api_inventory/endpoints/api/query/examples/POST/file_output.xml"

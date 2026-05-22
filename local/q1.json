@@ -1,0 +1,9 @@
+﻿{
+  "params": {
+    "search_query": "all:\"quantitative trading\" AND all:\"deep learning\" AND all:embedding",
+    "start": 0,
+    "max_results": 8,
+    "sortBy": "relevance",
+    "sortOrder": "descending"
+  }
+}

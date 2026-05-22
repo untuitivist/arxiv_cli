@@ -1,0 +1,233 @@
+{
+  "feed_title": "arXiv Query: search_query=all:\"portfolio management\" AND all:\"deep reinforcement learning\" AND all:market&id_list=&start=0&max_results=8",
+  "feed_id": "https://arxiv.org/api/XmUC/YJChqsKxLNtpOCq8Ct3Sug",
+  "updated": "2026-05-22T18:25:26Z",
+  "total_results": 55,
+  "start_index": 0,
+  "items_per_page": 8,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/2306.10950v1",
+      "title": "Benchmarking Robustness of Deep Reinforcement Learning approaches to Online Portfolio Management",
+      "summary": "Deep Reinforcement Learning approaches to Online Portfolio Selection have grown in popularity in recent years. The sensitive nature of training Reinforcement Learning agents implies a need for extensive efforts in market representation, behavior objectives, and training processes, which have often been lacking in previous works. We propose a training and evaluation process to assess the performance of classical DRL algorithms for portfolio management. We found that most Deep Reinforcement Learning algorithms were not robust, with strategies generalizing poorly and degrading quickly during backtesting.",
+      "published": "2023-06-19T14:09:56Z",
+      "updated": "2023-06-19T14:09:56Z",
+      "authors": [
+        "Marc Velay",
+        "Bich-Liên Doan",
+        "Arpad Rimmel",
+        "Fabrice Popineau",
+        "Fabrice Daniel"
+      ],
+      "categories": [
+        "cs.LG",
+        "q-fin.PM"
+      ],
+      "primary_category": "cs.LG",
+      "comment": "Submitted to INISTA 2023",
+      "journal_ref": null,
+      "doi": "10.1109/INISTA59065.2023.10310402",
+      "links": {
+        "alternate": "https://arxiv.org/abs/2306.10950v1",
+        "pdf": "https://arxiv.org/pdf/2306.10950v1",
+        "doi": "https://doi.org/10.1109/INISTA59065.2023.10310402"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2307.09631v1",
+      "title": "Deep Reinforcement Learning for ESG financial portfolio management",
+      "summary": "This paper investigates the application of Deep Reinforcement Learning (DRL) for Environment, Social, and Governance (ESG) financial portfolio management, with a specific focus on the potential benefits of ESG score-based market regulation. We leveraged an Advantage Actor-Critic (A2C) agent and conducted our experiments using environments encoded within the OpenAI Gym, adapted from the FinRL platform. The study includes a comparative analysis of DRL agent performance under standard Dow Jones Industrial Average (DJIA) market conditions and a scenario where returns are regulated in line with company ESG scores. In the ESG-regulated market, grants were proportionally allotted to portfolios based on their returns and ESG scores, while taxes were assigned to portfolios below the mean ESG score of the index. The results intriguingly reveal that the DRL agent within the ESG-regulated market outperforms the standard DJIA market setup. Furthermore, we considered the inclusion of ESG variables in the agent state space, and compared this with scenarios where such data were excluded. This comparison adds to the understanding of the role of ESG factors in portfolio management decision-making. We also analyze the behaviour of the DRL agent in IBEX 35 and NASDAQ-100 indexes. Both the A2C and Proximal Policy Optimization (PPO) algorithms were applied to these additional markets, providing a broader perspective on the generalization of our findings. This work contributes to the evolving field of ESG investing, suggesting that market regulation based on ESG scoring can potentially improve DRL-based portfolio management, with significant implications for sustainable investing strategies.",
+      "published": "2023-06-19T14:56:01Z",
+      "updated": "2023-06-19T14:56:01Z",
+      "authors": [
+        "Eduardo C. Garrido-Merchán",
+        "Sol Mora-Figueroa-Cruz-Guzmán",
+        "María Coronado-Vaca"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2307.09631v1",
+        "pdf": "https://arxiv.org/pdf/2307.09631v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2409.08426v1",
+      "title": "A Deep Reinforcement Learning Framework For Financial Portfolio Management",
+      "summary": "In this research paper, we investigate into a paper named \"A Deep Reinforcement Learning Framework for the Financial Portfolio Management Problem\" [arXiv:1706.10059]. It is a portfolio management problem which is solved by deep learning techniques. The original paper proposes a financial-model-free reinforcement learning framework, which consists of the Ensemble of Identical Independent Evaluators (EIIE) topology, a Portfolio-Vector Memory (PVM), an Online Stochastic Batch Learning (OSBL) scheme, and a fully exploiting and explicit reward function. Three different instants are used to realize this framework, namely a Convolutional Neural Network (CNN), a basic Recurrent Neural Network (RNN), and a Long Short-Term Memory (LSTM). The performance is then examined by comparing to a number of recently reviewed or published portfolio-selection strategies. We have successfully replicated their implementations and evaluations. Besides, we further apply this framework in the stock market, instead of the cryptocurrency market that the original paper uses. The experiment in the cryptocurrency market is consistent with the original paper, which achieve superior returns. But it doesn't perform as well when applied in the stock market.",
+      "published": "2024-09-03T20:11:04Z",
+      "updated": "2024-09-03T20:11:04Z",
+      "authors": [
+        "Jinyang Li"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG",
+        "q-fin.CP"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": "Master's thesis",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2409.08426v1",
+        "pdf": "https://arxiv.org/pdf/2409.08426v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2407.14486v1",
+      "title": "Explainable Post hoc Portfolio Management Financial Policy of a Deep Reinforcement Learning agent",
+      "summary": "Financial portfolio management investment policies computed quantitatively by modern portfolio theory techniques like the Markowitz model rely on a set on assumptions that are not supported by data in high volatility markets. Hence, quantitative researchers are looking for alternative models to tackle this problem. Concretely, portfolio management is a problem that has been successfully addressed recently by Deep Reinforcement Learning (DRL) approaches. In particular, DRL algorithms train an agent by estimating the distribution of the expected reward of every action performed by an agent given any financial state in a simulator. However, these methods rely on Deep Neural Networks model to represent such a distribution, that although they are universal approximator models, they cannot explain its behaviour, given by a set of parameters that are not interpretable. Critically, financial investors policies require predictions to be interpretable, so DRL agents are not suited to follow a particular policy or explain their actions. In this work, we developed a novel Explainable Deep Reinforcement Learning (XDRL) approach for portfolio management, integrating the Proximal Policy Optimization (PPO) with the model agnostic explainable techniques of feature importance, SHAP and LIME to enhance transparency in prediction time. By executing our methodology, we can interpret in prediction time the actions of the agent to assess whether they follow the requisites of an investment policy or to assess the risk of following the agent suggestions. To the best of our knowledge, our proposed approach is the first explainable post hoc portfolio management financial policy of a DRL agent. We empirically illustrate our methodology by successfully identifying key features influencing investment decisions, which demonstrate the ability to explain the agent actions in prediction time.",
+      "published": "2024-07-19T17:40:39Z",
+      "updated": "2024-07-19T17:40:39Z",
+      "authors": [
+        "Alejandra de la Rica Escudero",
+        "Eduardo C. Garrido-Merchan",
+        "Maria Coronado-Vaca"
+      ],
+      "categories": [
+        "cs.CE",
+        "cs.AI",
+        "q-fin.PM"
+      ],
+      "primary_category": "cs.CE",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2407.14486v1",
+        "pdf": "https://arxiv.org/pdf/2407.14486v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2109.07005v2",
+      "title": "WaveCorr: Correlation-savvy Deep Reinforcement Learning for Portfolio Management",
+      "summary": "The problem of portfolio management represents an important and challenging class of dynamic decision making problems, where rebalancing decisions need to be made over time with the consideration of many factors such as investors preferences, trading environments, and market conditions. In this paper, we present a new portfolio policy network architecture for deep reinforcement learning (DRL)that can exploit more effectively cross-asset dependency information and achieve better performance than state-of-the-art architectures. In particular, we introduce a new property, referred to as \\textit{asset permutation invariance}, for portfolio policy networks that exploit multi-asset time series data, and design the first portfolio policy network, named WaveCorr, that preserves this invariance property when treating asset correlation information. At the core of our design is an innovative permutation invariant correlation processing layer. An extensive set of experiments are conducted using data from both Canadian (TSX) and American stock markets (S&P 500), and WaveCorr consistently outperforms other architectures with an impressive 3%-25% absolute improvement in terms of average annual return, and up to more than 200% relative improvement in average Sharpe ratio. We also measured an improvement of a factor of up to 5 in the stability of performance under random choices of initial asset ordering and weights. The stability of the network has been found as particularly valuable by our industrial partner.",
+      "published": "2021-09-14T22:52:46Z",
+      "updated": "2021-09-28T16:34:18Z",
+      "authors": [
+        "Saeed Marzban",
+        "Erick Delage",
+        "Jonathan Yumeng Li",
+        "Jeremie Desgagne-Bouchard",
+        "Carl Dussault"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2109.07005v2",
+        "pdf": "https://arxiv.org/pdf/2109.07005v2"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2405.01604v1",
+      "title": "Portfolio Management using Deep Reinforcement Learning",
+      "summary": "Algorithmic trading or Financial robots have been conquering the stock markets with their ability to fathom complex statistical trading strategies. But with the recent development of deep learning technologies, these strategies are becoming impotent. The DQN and A2C models have previously outperformed eminent humans in game-playing and robotics. In our work, we propose a reinforced portfolio manager offering assistance in the allocation of weights to assets. The environment proffers the manager the freedom to go long and even short on the assets. The weight allocation advisements are restricted to the choice of portfolio assets and tested empirically to knock benchmark indices. The manager performs financial transactions in a postulated liquid market without any transaction charges. This work provides the conclusion that the proposed portfolio manager with actions centered on weight allocations can surpass the risk-adjusted returns of conventional portfolio managers.",
+      "published": "2024-05-01T22:28:55Z",
+      "updated": "2024-05-01T22:28:55Z",
+      "authors": [
+        "Ashish Anil Pawar",
+        "Vishnureddy Prashant Muskawar",
+        "Ritesh Tiku"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": "7 pages, 9 figures",
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2405.01604v1",
+        "pdf": "https://arxiv.org/pdf/2405.01604v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/2203.14159v1",
+      "title": "A Novel Neuromorphic Processors Realization of Spiking Deep Reinforcement Learning for Portfolio Management",
+      "summary": "The process of continuously reallocating funds into financial assets, aiming to increase the expected return of investment and minimizing the risk, is known as portfolio management. Processing speed and energy consumption of portfolio management have become crucial as the complexity of their real-world applications increasingly involves high-dimensional observation and action spaces and environment uncertainty, which their limited onboard resources cannot offset. Emerging neuromorphic chips inspired by the human brain increase processing speed by up to 1000 times and reduce power consumption by several orders of magnitude. This paper proposes a spiking deep reinforcement learning (SDRL) algorithm that can predict financial markets based on unpredictable environments and achieve the defined portfolio management goal of profitability and risk reduction. This algorithm is optimized forIntel's Loihi neuromorphic processor and provides 186x and 516x energy consumption reduction is observed compared to the competitors, respectively. In addition, a 1.3x and 2.0x speed-up over the high-end processors and GPUs, respectively. The evaluations are performed on cryptocurrency market between 2016 and 2021 the benchmark.",
+      "published": "2022-03-26T21:31:12Z",
+      "updated": "2022-03-26T21:31:12Z",
+      "authors": [
+        "Seyyed Amirhossein Saeidi",
+        "Forouzan Fallah",
+        "Soroush Barmaki",
+        "Hamed Farbeh"
+      ],
+      "categories": [
+        "cs.LG",
+        "cs.AR"
+      ],
+      "primary_category": "cs.LG",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/2203.14159v1",
+        "pdf": "https://arxiv.org/pdf/2203.14159v1"
+      }
+    },
+    {
+      "id": "http://arxiv.org/abs/1808.09940v3",
+      "title": "Adversarial Deep Reinforcement Learning in Portfolio Management",
+      "summary": "In this paper, we implement three state-of-art continuous reinforcement learning algorithms, Deep Deterministic Policy Gradient (DDPG), Proximal Policy Optimization (PPO) and Policy Gradient (PG)in portfolio management. All of them are widely-used in game playing and robot control. What's more, PPO has appealing theoretical propeties which is hopefully potential in portfolio management. We present the performances of them under different settings, including different learning rates, objective functions, feature combinations, in order to provide insights for parameters tuning, features selection and data preparation. We also conduct intensive experiments in China Stock market and show that PG is more desirable in financial market than DDPG and PPO, although both of them are more advanced. What's more, we propose a so called Adversarial Training method and show that it can greatly improve the training efficiency and significantly promote average daily return and sharpe ratio in back test. Based on this new modification, our experiments results show that our agent based on Policy Gradient can outperform UCRP.",
+      "published": "2018-08-29T17:39:08Z",
+      "updated": "2018-11-18T01:26:41Z",
+      "authors": [
+        "Zhipeng Liang",
+        "Hao Chen",
+        "Junhao Zhu",
+        "Kangkang Jiang",
+        "Yanran Li"
+      ],
+      "categories": [
+        "q-fin.PM",
+        "cs.LG",
+        "stat.ML"
+      ],
+      "primary_category": "q-fin.PM",
+      "comment": null,
+      "journal_ref": null,
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/1808.09940v3",
+        "pdf": "https://arxiv.org/pdf/1808.09940v3"
+      }
+    }
+  ],
+  "ok": true,
+  "request": {
+    "method": "GET",
+    "url": "https://export.arxiv.org/api/query?search_query=all%3A%22portfolio+management%22+AND+all%3A%22deep+reinforcement+learning%22+AND+all%3Amarket&start=0&max_results=8&sortBy=relevance&sortOrder=descending",
+    "params": {
+      "search_query": "all:\"portfolio management\" AND all:\"deep reinforcement learning\" AND all:market",
+      "start": 0,
+      "max_results": 8,
+      "sortBy": "relevance",
+      "sortOrder": "descending"
+    },
+    "data": null,
+    "headers": {
+      "User-Agent": "arxiv-cli/0.1.0 (contact-not-set)"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "reason": "OK",
+    "elapsed_ms": 910,
+    "content_type": "application/atom+xml; charset=utf-8"
+  }
+}

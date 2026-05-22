@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-22T18:06:23.903005+00:00",
+  "method_cases": 2,
+  "failures": 0,
+  "cases": [
+    {
+      "method": "GET",
+      "path": "/api/query",
+      "example_directory": "api_inventory/endpoints/api/query/examples/GET",
+      "status": "ok"
+    },
+    {
+      "method": "POST",
+      "path": "/api/query",
+      "example_directory": "api_inventory/endpoints/api/query/examples/POST",
+      "status": "ok"
+    }
+  ]
+}

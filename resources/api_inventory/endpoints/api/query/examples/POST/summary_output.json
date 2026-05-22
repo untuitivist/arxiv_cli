@@ -1,0 +1,39 @@
+{
+  "feed_title": "arXiv Query: search_query=all:electron&id_list=&start=0&max_results=1",
+  "feed_id": "https://arxiv.org/api/cHxbiOdZaP56ODnBPIenZhzg5f8",
+  "updated": "2026-05-22T18:06:31Z",
+  "total_results": 181696,
+  "start_index": 0,
+  "items_per_page": 1,
+  "entries": [
+    {
+      "id": "http://arxiv.org/abs/cond-mat/0011267v1",
+      "title": "The electronic structure of cuprates from high energy spectroscopy",
+      "summary": "We report studies of the electronic structure and elementary excitations of doped and undoped cuprate chains, ladders and planes. Using high energy spectroscopies such as x-ray absorption, core level photoemission and angle resolved photoemission spectroscopy, important information regarding the charge distribution and hole dynamics can be obtained. The comparison of the experimental data with suitable theoretical models sets constraints on the parameters entering into the model calculations, and offers insight into the important physical quantities governing the electronic structure of these materials. Recurring themes include the importance of the dimensionality of the Cu-O network (1D->2D) and the crucial role played by the spin-background in determining the dynamics of low-lying excitations in these strongly correlated systems.",
+      "published": "2000-11-15T16:19:15Z",
+      "updated": "2000-11-15T16:19:15Z",
+      "authors": [
+        "Mark S. Golden",
+        "Christian Duerr",
+        "Andreas Koitzsch",
+        "Sibylle Legner",
+        "Zhiwei Hu",
+        "Sergey Borisenko",
+        "Martin Knupfer",
+        "Joerg Fink"
+      ],
+      "categories": [
+        "cond-mat.supr-con",
+        "cond-mat.str-el"
+      ],
+      "primary_category": "cond-mat.supr-con",
+      "comment": "J. Electron Spec. Relat. Phenom.: special issue on electron correlation, in press",
+      "journal_ref": "J. Electron Spectr. Relat. Phenom. 117-118, 203 (2001)",
+      "doi": null,
+      "links": {
+        "alternate": "https://arxiv.org/abs/cond-mat/0011267v1",
+        "pdf": "https://arxiv.org/pdf/cond-mat/0011267v1"
+      }
+    }
+  ]
+}
